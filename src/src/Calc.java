@@ -9,9 +9,11 @@ public class Calc {
         String input = scanner.nextLine();
         String[] parts = input.split(" ");
         String operator = parts[1];
+
         int a , b ;
         int result;
-
+        if (parts.length >3){
+            throw  new IllegalArgumentException("Invalid Expression");}
         if (isRoman(parts[0])) {
             if ((isRoman(parts[0]) && !isRoman(parts[2])) || (!isRoman(parts[0]) && isRoman(parts[2]))) {
                 throw new IllegalArgumentException("Numbers should be either all roman or all arabic");
